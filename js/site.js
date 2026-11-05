@@ -1,5 +1,6 @@
 (function () {
   bindReviews();
+  bindWorks();
   bindBays();
   bindForm();
 
@@ -9,25 +10,43 @@
     var track = reel.querySelector(".reel-track");
     if (!track || !track.children.length) return;
     var originals = Array.prototype.slice.call(track.children);
-    originals.forEach(function (card) { track.appendChild(card.cloneNode(true)); });
+    function appendSet() {
+      originals.forEach(function (card) {
+        var clone = card.cloneNode(true);
+        clone.setAttribute("aria-hidden", "true");
+        track.appendChild(clone);
+      });
+    }
+    appendSet();
+    var guard = 0;
+    while (track.scrollWidth < reel.clientWidth * 2 && guard < 6) {
+      appendSet();
+      guard += 1;
+    }
     var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var x = 0;
-    var speed = reduce ? 0 : 0.55;
+    var speed = reduce ? 0 : 0.45;
     var paused = false;
     var dragging = false;
     var startX = 0;
     var startOffset = 0;
     var last = 0;
-    function loopWidth() { return track.scrollWidth / 2; }
+    var span = 0;
+    function measure() {
+      var clone = track.children[originals.length];
+      span = clone ? clone.offsetLeft : 0;
+    }
+    measure();
+    window.addEventListener("resize", measure);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
     function frame(now) {
       if (!last) last = now;
-      var dt = now - last;
+      var dt = Math.min(now - last, 40);
       last = now;
-      if (!paused && !dragging && speed) x -= speed * dt / 16;
-      var span = loopWidth();
+      if (!paused && !dragging && speed && span) x -= speed * dt / 16.67;
       if (span) {
-        if (x <= -span) x += span;
-        if (x > 0) x -= span;
+        while (x <= -span) x += span;
+        while (x > 0) x -= span;
       }
       track.style.transform = "translate3d(" + x + "px,0,0)";
       window.requestAnimationFrame(frame);
@@ -55,6 +74,54 @@
     reel.addEventListener("keydown", function (event) {
       if (event.key === "ArrowRight") x -= 280;
       if (event.key === "ArrowLeft") x += 280;
+    });
+  }
+
+  function bindWorks() {
+    var list = document.querySelector(".work-list");
+    if (!list) return;
+    var rows = Array.prototype.slice.call(list.querySelectorAll(".work-row"));
+    var query = document.getElementById("work-query");
+    var count = document.getElementById("work-count");
+    var empty = document.querySelector(".work-empty");
+    var reset = document.querySelector(".work-reset");
+    var chips = Array.prototype.slice.call(document.querySelectorAll(".work-chip"));
+    var group = "all";
+    function apply() {
+      var q = query ? query.value.trim().toLocaleLowerCase("ru") : "";
+      var shown = 0;
+      rows.forEach(function (row) {
+        var okGroup = group === "all" || row.getAttribute("data-group") === group;
+        var okQuery = !q || row.textContent.toLocaleLowerCase("ru").indexOf(q) !== -1;
+        var show = okGroup && okQuery;
+        row.hidden = !show;
+        if (show) shown += 1;
+      });
+      if (count) count.textContent = "Найдено услуг: " + shown;
+      if (empty) empty.hidden = shown !== 0;
+      if (reset) reset.hidden = group === "all" && !q;
+    }
+    chips.forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        group = chip.getAttribute("data-filter") || "all";
+        chips.forEach(function (item) {
+          var on = item === chip;
+          item.classList.toggle("is-on", on);
+          item.setAttribute("aria-pressed", on ? "true" : "false");
+        });
+        apply();
+      });
+    });
+    if (query) query.addEventListener("input", apply);
+    if (reset) reset.addEventListener("click", function () {
+      group = "all";
+      if (query) query.value = "";
+      chips.forEach(function (item) {
+        var on = item.getAttribute("data-filter") === "all";
+        item.classList.toggle("is-on", on);
+        item.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+      apply();
     });
   }
 
