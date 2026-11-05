@@ -1,0 +1,16 @@
+Stock stand-ins for the demo bays. Replace the files and keep the paths in js/data.js, or point photo at a new file.
+
+butyrskaya.jpg
+origin: Unsplash photo-1625047509168-a7026f36de04
+url: https://images.unsplash.com/photo-1625047509168-a7026f36de04
+license: Unsplash License
+
+avtozavodskaya.jpg
+origin: Unsplash photo-1619642751034-765dfdf7c58e
+url: https://images.unsplash.com/photo-1619642751034-765dfdf7c58e
+license: Unsplash License
+
+sokol.jpg
+origin: Unsplash photo-1530046339160-ce3e530c7d2f
+url: https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f
+license: Unsplash License
