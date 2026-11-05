@@ -450,11 +450,12 @@ h2 {
 .stars { display: inline-flex; gap: 0.12rem; margin-top: 0.2rem; color: var(--star); }
 .stars svg { width: 0.95rem; height: 0.95rem; }
 
-.solo-map { margin-top: 1.2rem; }
+.solo-map { width: 100%; margin-top: 1.2rem; }
 .solo-address { margin: 0 0 0.8rem; }
-.solo-address span { display: block; color: var(--muted); }
 .solo-frame {
+  display: block;
   width: 100%;
+  max-width: 100%;
   height: 28rem;
   border: 0;
   border-radius: 12px;
