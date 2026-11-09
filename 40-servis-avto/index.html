@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#221a14">
+  <meta name="theme-color" content="#008fcb">
   <title>Автосервис Сервис Avto</title>
   <meta name="description" content="Автосервис Сервис Avto. Легковой автосервис, Саратов.">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../css/fonts.css">
-  <link rel="stylesheet" href="../css/cluster.css">
+  <link rel="stylesheet" href="../css/cluster-v2.css">
   <style>:root{--color-primary:#5c3a20;--color-accent:#3a6e8a;--color-surface:#f6f3ef;--color-ink:#221a14;--font-display:"Sofia Sans Condensed", "Segoe UI", sans-serif;--font-body:"Sofia Sans Condensed", "Segoe UI", sans-serif;}</style>
 </head>
 <body>
@@ -18,14 +18,14 @@
   <header class="top">
     <a class="brand" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="13" r="6.5"/><path d="M16 10.2v5.2M16 19.5v5.5M12.5 27h7"/></svg><span>Сервис Avto</span></a>
     <nav class="nav" aria-label="Разделы">
-      <a href="#services">Услуги</a>
-      <a href="#reviews">Отзывы</a>
-      <a href="#bays">Адреса</a>
+      <a href="#services">Сервис</a>
+      <a href="#bays">Где мы</a>
+      <a href="#request">Запись</a>
     </nav>
     
     <a class="phone" href="tel:+78452900222">+7 (8452) 900‒222</a>
     
-    <a class="btn btn-red" href="#request">Записаться</a>
+    <a class="btn btn-navy" href="#request">Записаться</a>
   </header>
   <section class="hero" id="top">
     <div class="hero-media" style="background-image:url('../assets/bays/sokol.jpg')"></div>
@@ -35,13 +35,6 @@
       
       <p class="thesis">Легковой автосервис, Саратов.</p>
       
-      <div class="hero-actions">
-        
-        <a class="btn btn-red" href="tel:+78452900222">Позвонить +7 (8452) 900‒222</a>
-        <a class="btn btn-ghost" href="#request">Оставить заявку</a>
-        
-        
-      </div>
       
       <ul class="facts">
         <li>Саратов</li>
@@ -49,31 +42,37 @@
         <li>1 адрес</li>
       </ul>
       
+      <div class="hero-actions">
+        
+        <a class="btn btn-navy" href="tel:+78452900222">Позвонить +7 (8452) 900‒222</a>
+        <a class="btn btn-ghost" href="#request">Оставить заявку</a>
+        
+        
+      </div>
     </div>
   </section>
+  
   <section class="wrap" id="services">
     
-    <div class="work-head">
-      <div>
-        <h2>Найдите нужную работу</h2>
-        <p class="note">Список услуг и ориентировочных цен.</p>
-      </div>
-      <label class="work-search">
-        <span>Поиск по услугам и моделям</span>
-        <input type="search" id="work-query" placeholder="Например, генератор или Веста" autocomplete="off">
-      </label>
+    <div class="jobs-head"><h2>Услуги автосервиса</h2><svg class="scroll-hint" viewBox="0 0 320 300" aria-hidden="true"><rect class="tooltip-horizontal-scroll-icon_card" x="480" width="200" height="200" rx="5" fill="rgba(190,190,190,0.3)"></rect><rect class="tooltip-horizontal-scroll-icon_card" y="0" width="200" height="200" rx="5" fill="rgba(190,190,190,0.3)"></rect><rect class="tooltip-horizontal-scroll-icon_card" x="240" width="200" height="200" rx="5" fill="rgba(190,190,190,0.3)"></rect><path class="tooltip-horizontal-scroll-icon_hand" d="M78.9579 285.7C78.9579 285.7 37.8579 212.5 20.5579 180.8C-2.44209 138.6 -6.2422 120.8 9.6579 112C19.5579 106.5 33.2579 108.8 41.6579 123.4L61.2579 154.6V32.3C61.2579 32.3 60.0579 0 83.0579 0C107.558 0 105.458 32.3 105.458 32.3V91.7C105.458 91.7 118.358 82.4 133.458 86.6C141.158 88.7 150.158 92.4 154.958 104.6C154.958 104.6 185.658 89.7 200.958 121.4C200.958 121.4 236.358 114.4 236.358 151.1C236.358 187.8 192.158 285.7 192.158 285.7H78.9579Z" fill="rgba(190,190,190,1)"></path></svg></div>
+    <p class="note">Услуги с карточки 2ГИС: в открытом прайсе 9.</p>
+    
+    <div class="slider" data-slider="services">
+      <button type="button" class="slider-btn is-prev" aria-label="Назад"><img src="../assets/avtomoe/icon-arrow.svg" alt="" style="transform:rotate(180deg)"></button>
+      <div class="slider-view"><div class="slider-track"><article class="job"><img src="../assets/covers/alignment.png" alt=""><div><h3>Развал 3D</h3><p class="price">от 1 500 ₽</p></div></article><article class="job"><img src="../assets/covers/shop.jpg" alt=""><div><h3>Чтение/удаление кодов ЭБУ сканером AUTEL</h3><p class="price">от 770 ₽</p></div></article><article class="job"><img src="../assets/covers/ac.png" alt=""><div><h3>Аппаратная заправка кондиционера</h3><p class="price">от 2 500 ₽</p></div></article><article class="job"><img src="../assets/covers/oil.png" alt=""><div><h3>Замена масла и масляного фильтра</h3><p class="price">от 880 ₽</p></div></article><article class="job"><img src="../assets/covers/brakes.png" alt=""><div><h3>Замена тормозных колодок л/а</h3><p class="price">от 880 ₽</p></div></article><article class="job"><img src="../assets/covers/brakes.png" alt=""><div><h3>Проточка тормозного диска</h3><p class="price">от 1 100 ₽</p></div></article><article class="job"><img src="../assets/covers/oil.png" alt=""><div><h3>Аппаратная замена масла в АКПП</h3><p class="price">от 1 100 ₽</p></div></article><article class="job"><img src="../assets/covers/suspension.jpg" alt=""><div><h3>Замена сайлентблока</h3><p class="price">от 610 ₽</p></div></article><article class="job"><img src="../assets/covers/shop.jpg" alt=""><div><h3>Мойка днища автомобиля на подъемнике в Саратове</h3><p class="price">от 1 500 ₽</p></div></article><article class="job"><img src="../assets/covers/shop.jpg" alt=""><div><h3>Ремонт выхлопных систем</h3></div></article><article class="job"><img src="../assets/covers/oil.png" alt=""><div><h3>Замена масла</h3></div></article><article class="job"><img src="../assets/covers/engine.png" alt=""><div><h3>Ремонт инжекторов</h3></div></article><article class="job"><img src="../assets/covers/engine.png" alt=""><div><h3>Ремонт бензиновых двигателей</h3></div></article><article class="job"><img src="../assets/covers/diagnostics.png" alt=""><div><h3>Ремонт стартеров и генераторов</h3></div></article><article class="job"><img src="../assets/covers/shop.jpg" alt=""><div><h3>Ремонт ходовой части автомобиля</h3></div></article><article class="job"><img src="../assets/covers/brakes.png" alt=""><div><h3>Проточка тормозных дисков</h3></div></article></div></div>
+      <button type="button" class="slider-btn is-next" aria-label="Вперёд"><img src="../assets/avtomoe/icon-arrow.svg" alt=""></button>
     </div>
-    <div class="work-filters" role="group" aria-label="Фильтр услуг"><button type="button" class="work-chip is-on" data-filter="all" aria-pressed="true">Все услуги</button><button type="button" class="work-chip" data-filter="service" aria-pressed="false">Обслуживание</button><button type="button" class="work-chip" data-filter="repair" aria-pressed="false">Ремонт</button><button type="button" class="work-chip" data-filter="electric" aria-pressed="false">Электрика</button></div>
-    <p class="work-meta">
-      <span id="work-count">Найдено услуг: 16</span>
-      <button type="button" class="work-reset" hidden>Сбросить фильтры</button>
-    </p>
-    <ul class="work-list"><li class="work-row" data-group="service"><span>Развал 3D</span><b class="price">от 1 500 ₽</b></li><li class="work-row" data-group="repair"><span>Чтение/удаление кодов ЭБУ сканером AUTEL</span><b class="price">от 770 ₽</b></li><li class="work-row" data-group="repair"><span>Аппаратная заправка кондиционера</span><b class="price">от 2 500 ₽</b></li><li class="work-row" data-group="service"><span>Замена масла и масляного фильтра</span><b class="price">от 880 ₽</b></li><li class="work-row" data-group="repair"><span>Замена тормозных колодок л/а</span><b class="price">от 880 ₽</b></li><li class="work-row" data-group="repair"><span>Проточка тормозного диска</span><b class="price">от 1 100 ₽</b></li><li class="work-row" data-group="service"><span>Аппаратная замена масла в АКПП</span><b class="price">от 1 100 ₽</b></li><li class="work-row" data-group="repair"><span>Замена сайлентблока</span><b class="price">от 610 ₽</b></li><li class="work-row" data-group="service"><span>Мойка днища автомобиля на подъемнике в Саратове</span><b class="price">от 1 500 ₽</b></li><li class="work-row" data-group="repair"><span>Ремонт выхлопных систем</span></li><li class="work-row" data-group="service"><span>Замена масла</span></li><li class="work-row" data-group="repair"><span>Ремонт инжекторов</span></li><li class="work-row" data-group="repair"><span>Ремонт бензиновых двигателей</span></li><li class="work-row" data-group="electric"><span>Ремонт стартеров и генераторов</span></li><li class="work-row" data-group="repair"><span>Ремонт ходовой части автомобиля</span></li><li class="work-row" data-group="repair"><span>Проточка тормозных дисков</span></li></ul>
-    <p class="empty work-empty" hidden>Ничего не нашлось. Сбросьте фильтр или уточните запрос.</p>
-    <p class="note work-footnote">Цены указаны «от»: итоговую стоимость уточним после осмотра.</p>
-    <a class="btn btn-red work-cta" href="#request">Уточнить стоимость</a>
     
     
+  </section>
+  <section class="wrap consult">
+    <h2>Не нашли нужный вид ремонта или нужна консультация?</h2>
+    <p class="note">Оставьте заявку, чтобы узнать стоимость или записаться на диагностику.</p>
+    <div class="consult-actions">
+      <a class="btn btn-navy" href="#request">Записаться на диагностику</a>
+      <a class="btn btn-ghost" href="#request">Узнать стоимость ремонта</a>
+    </div>
+    <svg class="arrow-down" viewBox="0 0 35 70" aria-hidden="true"><path d="M31.5 47c-1.1-.9-2.7-.7-3.5.4L20.2 57V5.8c0-1.4-1.1-2.5-2.5-2.5s-2.5 1.1-2.5 2.5V57l-7.8-9.7c-.8-1-2.4-1.2-3.5-.3-1.1.9-1.2 2.4-.4 3.5l12.2 15.2c.5.6 1.2.9 1.9.9s1.5-.3 1.9-.9l12.2-15.2c.9-1.1.7-2.6-.4-3.5z"/></svg>
   </section>
   <section class="wrap" id="reviews">
     <h2>Отзывы</h2>
@@ -90,7 +89,7 @@
     
     <div class="solo-map">
       <p class="solo-address"><strong>Автосервис Сервис Avto</strong><br>улица им. Чернышевского Н.Г., 153, Саратов. 1 этаж</p>
-      <iframe class="solo-frame" title="Карта: улица им. Чернышевского Н.Г., 153, Саратов. 1 этаж" src="https://yandex.ru/map-widget/v1/?ll=46.032867,51.523497&amp;z=16&amp;pt=46.032867,51.523497,pm2rdm&amp;l=map" loading="lazy" style="display:block;width:100%;max-width:100%;height:28rem;border:0;border-radius:12px"></iframe>
+      <iframe class="solo-frame" title="Карта: улица им. Чернышевского Н.Г., 153, Саратов. 1 этаж" src="https://yandex.ru/map-widget/v1/?ll=46.032867,51.523497&amp;z=16&amp;pt=46.032867,51.523497,pm2rdm&amp;l=map" loading="lazy"></iframe>
       <p class="solo-out"><a href="https://yandex.ru/maps/?ll=46.032867,51.523497&amp;z=16&amp;pt=46.032867,51.523497&amp;l=map" target="_blank" rel="noopener">Открыть в Яндекс Картах</a></p>
     </div>
     
@@ -138,6 +137,6 @@
     <iframe class="nav-map" title="Карта"></iframe>
     <p class="nav-foot"><a id="nav-out" href="" target="_blank" rel="noopener" hidden>Открыть в Яндекс Картах</a></p>
   </dialog>
-  <script src="../js/site.js"></script>
+  <script src="../js/site-v2.js"></script>
 </body>
 </html>
